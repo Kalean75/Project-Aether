@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -42,11 +43,19 @@ public class PlayerController : MonoBehaviour
     //increase size when eating smaller object
     private void increaseSize(GameObject collidedObject)
     {
-        //add to 
-		Vector3 trans = new Vector3(growthRate, growthRate, growthRate);
-		this.gameObject.transform.localScale += trans;
-        Destroy(collidedObject);
-        currentCollision = false;
+        //add to players size
+        //Vector3 size = collidedObject.GetComponent<MeshRenderer>().bounds.size;
+        float x = collidedObject.transform.localScale.x * growthRate;
+        float y = collidedObject.transform.localScale.y* growthRate;
+		float z = collidedObject.transform.localScale.z* growthRate;
+
+		Vector3 collidedTrans = new Vector3(x, y, z);
+        if(collidedObject.transform.localScale.x <= this.transform.localScale.x)
+        {
+			this.gameObject.transform.localScale += collidedTrans;
+			currentCollision = false;
+			Destroy(collidedObject);
+		}
     }
 
 	void OnCollisionEnter(Collision collision)
