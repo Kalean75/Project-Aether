@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         movePlayer();
         if(currentCollision)
         {
-            increaseSize(collidedObject);
+            IncreaseSize(collidedObject);
         }
 
 	}
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(newPosX, 0, newPosz);
 	}
     //increase size when eating smaller object
-    private void increaseSize(GameObject collidedObject)
+    private void IncreaseSize(GameObject collidedObject)
     {
         //add to players size
         //Vector3 size = collidedObject.GetComponent<MeshRenderer>().bounds.size;

@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
         if(spawnTime <= 0.0f)
         {
 			spawnTime = UnityEngine.Random.Range(minSpawnTime, maxSpawnTime);
-			Instantiate(spawnedObjects[0], new Vector3(this.transform.position.x + offsetx, this.transform.position.y, this.transform.position.z + offsetz), Quaternion.identity);			
+			Instantiate(spawnedObjects[0], new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - (transform.forward.z+offsetz)), this.transform.rotation);			
 		}
     }
 }
