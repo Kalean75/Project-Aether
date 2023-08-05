@@ -760,6 +760,7 @@ MonoBehaviour:
   movementSpeed: 8
   growthRate: 0.2
   playerSprites: 
+  canvas: {fileID: 0}
 --- !u!54 &734226499
 Rigidbody:
   m_ObjectHideFlags: 0
