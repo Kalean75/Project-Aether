@@ -11,8 +11,11 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float movementSpeed = 2.0f;
     [SerializeField][Range(0.2f,1.0f)] float growthRate = 0.2f;
 	[SerializeField] List<int> playerSprites = new List<int>();
-	bool currentCollision;
+    //GameObjects
     GameObject collidedObject;
+    //Flags
+	bool currentCollision;
+    bool paused = false;
 
 	// Start is called before the first frame update
 	void Start()
@@ -23,10 +26,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(this.gameObject == null)
+        {
+            Application.Quit();
+        }
         movePlayer();
         if(currentCollision)
         {
             IncreaseSize(collidedObject);
+        }
+        //Refactor into imput check function
+        if (Input.GetKey(KeyCode.P))
+        {
+            Pause();
+        }
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
         }
 
 	}
@@ -56,6 +72,20 @@ public class PlayerController : MonoBehaviour
 			currentCollision = false;
 			Destroy(collidedObject);
 		}
+    }
+
+    private void Pause()
+    {
+        if(!paused)
+        {
+            paused= true;
+			Time.timeScale = 0;
+		}
+        else
+        {
+            paused = false;
+            Time.timeScale = 1;
+        }
     }
 
 	void OnCollisionEnter(Collision collision)
