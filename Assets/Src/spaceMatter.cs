@@ -46,7 +46,7 @@ public class spaceMatter : MonoBehaviour
 		float z = collidedObject.transform.localScale.z * growthRate;
 
 		Vector3 collidedTrans = new Vector3(x, y, z);
-		float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
+		float collidedMass = collidedObject.GetComponent<Rigidbody>().mass * growthRate;
 		if (collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
 		{
 			this.gameObject.transform.localScale += collidedTrans;
