@@ -5,29 +5,33 @@ using UnityEngine;
 public class spaceMatter : MonoBehaviour
 {
 	[Header("Atrributes of Space debris")]
-	[SerializeField] float minimumScale;
-	[SerializeField] float maximumScale;
-	[SerializeField] float growthRate = 0.3f;
+	[SerializeField][Range(0.5f, 20.0f)] float minimumScale;
+	[SerializeField][Range(20.5f, 100.0f)] float maximumScale;
+	[SerializeField][Range(0.1f, 1.0f)] float growthRate;
+	//Gameobjects
 	GameObject collidedObject;
+	//flags
 	bool currentCollision;
 	// Start is called before the first frame update
 	void Start()
     {
-        float scale = UnityEngine.Random.Range(maximumScale, minimumScale);
+        float scale = Random.Range(maximumScale, minimumScale);
+		float mass = scale * 100;
 		this.transform.localScale = new Vector3(scale, scale, scale);
+		this.GetComponent<Rigidbody>().mass += mass;
     }
 
     // Update is called once per frame
     void Update()
     {
-		moveMatter();
+		MoveMatter();
 		if (currentCollision)
 		{
 			IncreaseSize(collidedObject);
 		}
 	}
 
-	private void moveMatter()
+	private void MoveMatter()
 	{
 		transform.Translate(transform.forward * Time.deltaTime);
 	}
@@ -42,9 +46,11 @@ public class spaceMatter : MonoBehaviour
 		float z = collidedObject.transform.localScale.z * growthRate;
 
 		Vector3 collidedTrans = new Vector3(x, y, z);
-		if (collidedObject.transform.localScale.x <= this.transform.localScale.x)
+		float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
+		if (collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
 		{
 			this.gameObject.transform.localScale += collidedTrans;
+			this.GetComponent<Rigidbody>().mass += collidedMass;
 			currentCollision = false;
 			Destroy(collidedObject);
 		}
