@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class spaceMatter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+	bool currentCollision;
+	GameObject collidedObject;
+	// Start is called before the first frame update
+	void Start()
     {
         
     }
@@ -15,4 +17,16 @@ public class spaceMatter : MonoBehaviour
     {
         
     }
+
+	void OnCollisionEnter(Collision collision)
+	{
+		//currentCollision = true;
+		collidedObject = collision.gameObject;
+	}
+
+	void OnCollisionExit(Collision collision)
+	{
+		//currentCollision = false;
+		collidedObject = collision.gameObject;
+	}
 }

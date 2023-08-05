@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] float minSpawnTime = 5.0f;
-	[SerializeField] float maxSpawnTime = 100.0f;
+    [SerializeField] float minSpawnTime = 1.0f;
+	[SerializeField] float maxSpawnTime = 50.0f;
 	[SerializeField] List<GameObject> spawnedObjects = new List<GameObject>();
-	float i = 5.0f;
+    float spawnTime;
 	// Start is called before the first frame update
 	void Start()
     {
-		i = 5.0f;
+	    spawnTime = UnityEngine.Random.Range(minSpawnTime, maxSpawnTime);
 	}
 
     // Update is called once per frame
@@ -24,14 +24,14 @@ public class Spawner : MonoBehaviour
 
     private void spawnObject()
     {
-        i -= Time.deltaTime;
-        int offset = UnityEngine.Random.Range(1, 20);
-        Debug.Log(i);
-        if(i <= 0.0f)
+        spawnTime -= Time.deltaTime;
+        int offsetx = UnityEngine.Random.Range(1, 5);
+		int offsetz = UnityEngine.Random.Range(1, 5);
+		//Debug.Log(spawnTime);
+        if(spawnTime <= 0.0f)
         {
-            i = 5.0f;
-			float spawntime = UnityEngine.Random.Range(minSpawnTime, maxSpawnTime);
-			Instantiate(spawnedObjects[0], new Vector3(this.transform.position.x + offset, this.transform.position.y + offset, this.transform.position.z + offset), Quaternion.identity);
+			spawnTime = UnityEngine.Random.Range(minSpawnTime, maxSpawnTime);
+			Instantiate(spawnedObjects[0], new Vector3(this.transform.position.x + offsetx, this.transform.position.y, this.transform.position.z + offsetz), Quaternion.identity);			
 		}
     }
 }
