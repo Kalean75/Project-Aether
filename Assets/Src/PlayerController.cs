@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -11,17 +12,17 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float movementSpeed = 2.0f;
     [SerializeField][Range(0.2f,1.0f)] float growthRate = 0.2f;
 	[SerializeField] List<int> playerSprites = new List<int>();
+	[SerializeField] Canvas _canvas;
     //GameObjects
     GameObject collidedObject;
     //Flags
 	bool currentCollision;
     bool paused = false;
 
-	// Start is called before the first frame update
+    // Start is called before the first frame update
 	void Start()
-    {
-        
-    }
+	{
+	}
 
     // Update is called once per frame
     void Update()
@@ -36,15 +37,10 @@ public class PlayerController : MonoBehaviour
             IncreaseSize(collidedObject);
         }
         //Refactor into imput check function
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
 	}
 
     //z and x axis for horizontal
@@ -79,11 +75,13 @@ public class PlayerController : MonoBehaviour
         if(!paused)
         {
             paused= true;
+	        _canvas.gameObject.SetActive(true);
 			Time.timeScale = 0;
 		}
         else
         {
             paused = false;
+	        _canvas.gameObject.SetActive(false);
             Time.timeScale = 1;
         }
     }
