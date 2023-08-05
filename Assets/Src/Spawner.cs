@@ -19,10 +19,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		spawnObject();
+		SpawnObject();
     }
 
-    private void spawnObject()
+    private void SpawnObject()
     {
         spawnTime -= Time.deltaTime;
         int offsetx = UnityEngine.Random.Range(1, 5);
