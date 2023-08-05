@@ -42,9 +42,11 @@ public class spaceMatter : MonoBehaviour
 		float z = collidedObject.transform.localScale.z * growthRate;
 
 		Vector3 collidedTrans = new Vector3(x, y, z);
-		if (collidedObject.transform.localScale.x <= this.transform.localScale.x)
+		float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
+		if (collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
 		{
 			this.gameObject.transform.localScale += collidedTrans;
+			this.GetComponent<Rigidbody>().mass += collidedMass;
 			currentCollision = false;
 			Destroy(collidedObject);
 		}

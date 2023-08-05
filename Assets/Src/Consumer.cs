@@ -21,6 +21,7 @@ namespace Src
 
         private void OnCollisionEnter(Collision other)
         {
+           GameObject collidedObject = other.gameObject;
             var otherScale = other.transform.localScale;
 
             float x = otherScale.x * growthRate;
@@ -28,11 +29,15 @@ namespace Src
             float z = otherScale.z * growthRate;
 
             Vector3 collidedTrans = new Vector3(x, y, z);
-            if (other.transform.localScale.x <= this.transform.localScale.x)
+
+			float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
+			if (other.transform.localScale.x <= this.transform.localScale.x|| collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
             {
                 this.gameObject.transform.localScale += collidedTrans;
-                Destroy(other.gameObject);
+				this.GetComponent<Rigidbody>().mass += collidedMass;
+				Destroy(other.gameObject);
             }
+
         }
     }
 }

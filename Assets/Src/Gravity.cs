@@ -26,7 +26,7 @@ namespace Src
 
         public void ApplyForces()
         {
-            var gravityObjects = new List<Gravity>(GameObject.FindObjectsOfType<Gravity>());
+            var gravityObjects = new List<Gravity>(GameObject.FindObjectsByType<Gravity>(FindObjectsSortMode.None));
             foreach(var x in gravityObjects)
             {
                 if(x == this)
