@@ -21,6 +21,7 @@ namespace Src
 		// Start is called before the first frame update
 		void Start()
 		{
+			this.GetComponent<Rigidbody>().freezeRotation= true;
 		}
 
 		// Update is called once per frame
@@ -30,7 +31,6 @@ namespace Src
 			{
 				Application.Quit();
 			}
-			MovePlayer();
 			if(_currentCollision)
 			{
 				IncreaseSize(_collidedObject);
@@ -40,10 +40,18 @@ namespace Src
 			{
 				Pause();
 			}
+			if(Input.GetKeyDown(KeyCode.LeftShift)) 
+			{
+				MovePlayer(movementSpeed * 2);
+			}
+			else
+			{
+				MovePlayer(movementSpeed);
+			}
 		}
 
 		//z and x axis for horizontal
-		private void MovePlayer()
+		private void MovePlayer(float movementSpeed)
 		{
 			var z = Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed;
 			var x = Input.GetAxis("Horizontal") * Time.deltaTime * movementSpeed;
@@ -93,8 +101,8 @@ namespace Src
 
 		void OnCollisionEnter(Collision collision)
 		{
-			Debug.Log("collided");
-			Debug.Log(this);
+			//Debug.Log("collided");
+			//Debug.Log(this);
 			_currentCollision = true;
 			_collidedObject = collision.gameObject;
 		}
@@ -103,7 +111,7 @@ namespace Src
 		{
 			_currentCollision = false;
 			_collidedObject = collision.gameObject;
-			Debug.Log("Exited collider");
+			//Debug.Log("Exited collider");
 		}
 	}
 }

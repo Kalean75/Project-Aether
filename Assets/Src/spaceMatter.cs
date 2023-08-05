@@ -15,7 +15,8 @@ public class spaceMatter : MonoBehaviour
     {
         float scale = UnityEngine.Random.Range(maximumScale, minimumScale);
 		this.transform.localScale = new Vector3(scale, scale, scale);
-    }
+		this.GetComponent<Rigidbody>().mass = this.transform.localScale.x * 5;
+	}
 
     // Update is called once per frame
     void Update()
