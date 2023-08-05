@@ -36,11 +36,11 @@ public class PlayerController : MonoBehaviour
             IncreaseSize(collidedObject);
         }
         //Refactor into imput check function
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Pause();
         }
-        if(Input.GetKey(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }

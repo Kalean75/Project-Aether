@@ -7,7 +7,7 @@ public class spaceMatter : MonoBehaviour
 	[Header("Atrributes of Space debris")]
 	[SerializeField] float minimumScale;
 	[SerializeField] float maximumScale;
-	[SerializeField] float growthRate;
+	[SerializeField] float growthRate = 0.3f;
 	GameObject collidedObject;
 	bool currentCollision;
 	// Start is called before the first frame update
@@ -46,10 +46,7 @@ public class spaceMatter : MonoBehaviour
 		{
 			this.gameObject.transform.localScale += collidedTrans;
 			currentCollision = false;
-			if (collidedObject != null)
-			{
-				Destroy(collidedObject);
-			}
+			Destroy(collidedObject);
 		}
 	}
 
