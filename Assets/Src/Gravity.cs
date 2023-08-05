@@ -48,7 +48,7 @@ namespace Src
 
             var direction = (other.position - Rigidbody.position);
             var x = direction.x != 0 ? direction.x / Math.Abs(direction.x) : 0;
-            var y = direction.y != 0 ? direction.y / Math.Abs(direction.y) : 0;
+            // var y = direction.y != 0 ? direction.y / Math.Abs(direction.y) : 0;
             var z = direction.z != 0 ? direction.z / Math.Abs(direction.z) : 0;
 
             direction = new Vector3(x,0,z);
