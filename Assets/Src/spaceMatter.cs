@@ -24,7 +24,11 @@ public class spaceMatter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
 		MoveMatter();
+=======
+		// moveMatter();
+>>>>>>> Stashed changes
 		if (currentCollision)
 		{
 			IncreaseSize(collidedObject);

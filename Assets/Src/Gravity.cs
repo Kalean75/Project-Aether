@@ -51,7 +51,7 @@ namespace Src
             var y = direction.y != 0 ? direction.y / Math.Abs(direction.y) : 0;
             var z = direction.z != 0 ? direction.z / Math.Abs(direction.z) : 0;
 
-            direction = new Vector3(x,y,z);
+            direction = new Vector3(x,0,z);
 
             var result = new Vector3(
                 direction.x * force,
