@@ -8,7 +8,7 @@ namespace Src
 	{
 		[Header("PlayerAttributes")]
 		[SerializeField] float movementSpeed = 2.0f;
-		[SerializeField][Range(0.2f,1.0f)] float growthRate = 0.2f;
+		[SerializeField][Range(0.1f,1.0f)] float growthRate;
 		[SerializeField] List<int> playerSprites = new List<int>();
 		[SerializeField] Canvas canvas;
 		
@@ -59,17 +59,17 @@ namespace Src
 		private void IncreaseSize(GameObject collidedObject)
 		{
 			//add to players size
-			//Vector3 size = collidedObject.GetComponent<MeshRenderer>().bounds.size;
-			var localScale = collidedObject.transform.localScale;
-        
-			float x = localScale.x * growthRate;
-			float y = localScale.y* growthRate;
-			float z = localScale.z* growthRate;
+
+			float x = collidedObject.transform.localScale.x * growthRate;
+			float y = collidedObject.transform.localScale.y * growthRate;
+			float z = collidedObject.transform.localScale.z * growthRate;
 
 			Vector3 collidedTrans = new Vector3(x, y, z);
-			if(collidedObject.transform.localScale.x <= this.transform.localScale.x)
+			float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
+			if(collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
 			{
 				this.gameObject.transform.localScale += collidedTrans;
+				this.GetComponent<Rigidbody>().mass += collidedMass;
 				_currentCollision = false;
 				Destroy(collidedObject);
 			}
