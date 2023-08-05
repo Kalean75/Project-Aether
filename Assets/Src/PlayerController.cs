@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("PlayerAttributes")]
 	[SerializeField] float movementSpeed = 2.0f;
     [SerializeField] int[] playerSprites;
+
 	// Start is called before the first frame update
 	void Start()
     {
