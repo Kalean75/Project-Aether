@@ -10,7 +10,7 @@ public class spaceMatter : MonoBehaviour
 	[SerializeField] float maximumScale;
 	[SerializeField] float moveSpeed = 1.0f;
 	GameObject collidedObject;
-	bool currentCollision;
+	//bool currentCollision;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -36,13 +36,13 @@ public class spaceMatter : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
-		currentCollision = true;
+		//currentCollision = true;
 		collidedObject = collision.gameObject;
 	}
 
 	void OnCollisionExit(Collision collision)
 	{
-		currentCollision = false;
+		//currentCollision = false;
 		collidedObject = collision.gameObject;
 	}
 }
