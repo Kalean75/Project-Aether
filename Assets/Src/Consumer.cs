@@ -23,7 +23,7 @@ namespace Src
         {
 			//add to players size
             GameObject collidedGO = collidedObject.gameObject;
-            if(collidedGO != null && !collidedGO.CompareTag("Wall"))
+            if(collidedGO != null && !collidedGO.CompareTag("Wall") && collidedObject.gameObject!= this.gameObject)
             {
 				float mass = this.GetComponent<Rigidbody>().mass;
 				float collidedMass = collidedGO.GetComponent<Rigidbody>().mass;

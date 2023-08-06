@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumScale: 0.1
   maximumScale: 2
-  moveSpeed: 10
+  moveSpeed: 1
 --- !u!136 &437438200697222925
 CapsuleCollider:
   m_ObjectHideFlags: 0

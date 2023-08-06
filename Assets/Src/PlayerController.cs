@@ -16,7 +16,7 @@ namespace Src
 		//GameObjects
 		GameObject _collidedObject;
 		//Flags
-		bool _currentCollision;
+		//bool _currentCollision;
 		bool _paused = true;
 
 		// Start is called before the first frame update
@@ -65,7 +65,7 @@ namespace Src
         
 			position = new Vector3(newPosX, 0, newPosz);
 			//transform.position = position;
-			this.GetComponent<Rigidbody>().MovePosition(position);
+			this.GetComponent<Rigidbody>().AddForce(position);
 		}
 		private void Pause()
 		{
@@ -87,13 +87,13 @@ namespace Src
 		{
 			//Debug.Log("collided");
 			//Debug.Log(this);
-			_currentCollision = true;
+			//_currentCollision = true;
 			_collidedObject = collision.gameObject;
 		}
 
 		void OnCollisionExit(Collision collision)
 		{
-			_currentCollision = false;
+			//_currentCollision = false;
 			_collidedObject = collision.gameObject;
 			//Debug.Log("Exited collider");
 		}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class spaceMatter : MonoBehaviour
 {
@@ -27,8 +28,10 @@ public class spaceMatter : MonoBehaviour
 
 	private void moveMatter()
 	{
-		this.GetComponent<Rigidbody>().MovePosition(transform.forward * moveSpeed * Time.deltaTime);
+
+		//this.GetComponent<Rigidbody>().MovePosition(transform.forward * moveSpeed * Time.deltaTime);
 		//transform.Translate((transform.forward * moveSpeed  * Time.deltaTime));
+		this.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed * Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision collision)
