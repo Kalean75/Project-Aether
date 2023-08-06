@@ -8,7 +8,7 @@ namespace Src
 	public class PlayerController : MonoBehaviour
 	{
 		[Header("PlayerAttributes")]
-		[SerializeField] float movementSpeed = 2.0f;
+		[SerializeField] float movementSpeed = 1.0f;
 		[SerializeField] float sprintMovementMultiplier = 10.0f;
 		//[SerializeField] List<int> playerSprites = new List<int>();
 		[SerializeField] Canvas pauseMenu;
@@ -35,7 +35,6 @@ namespace Src
 			}
 			parseInputs();
 		}
-
 		private void parseInputs()
 		{
 			//Refactor into imput check function
@@ -56,16 +55,18 @@ namespace Src
 		//z and x axis for horizontal
 		private void MovePlayer(float movementSpeed)
 		{
-			var z = Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed;
-			var x = Input.GetAxis("Horizontal") * Time.deltaTime * movementSpeed;
+
+			var z = Input.GetAxis("Vertical") * movementSpeed;
+			var x = Input.GetAxis("Horizontal") * movementSpeed;
 		
-			var position = transform.position;
-			var newPosz = position.z + z;
-			var newPosX = position.x + x;
+			//var position = transform.position;
+			//var newPosz = position.z + z;
+			//var newPosX = position.x + x;
         
-			position = new Vector3(newPosX, 0, newPosz);
+			var acceleration = new Vector3(x, 0, z);
+			//position = new Vector3(newPosX, 0, newPosz);
 			//transform.position = position;
-			this.GetComponent<Rigidbody>().AddForce(position);
+			this.GetComponent<Rigidbody>().velocity = acceleration;
 		}
 		private void Pause()
 		{

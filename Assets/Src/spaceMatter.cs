@@ -18,6 +18,7 @@ public class spaceMatter : MonoBehaviour
 		this.transform.localScale = new Vector3(scale, scale, scale);
 		this.GetComponent<Rigidbody>().mass = this.transform.localScale.x * 5;
 		this.GetComponent<Rigidbody>().freezeRotation = true;
+		this.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed * Time.deltaTime);
 	}
 
     // Update is called once per frame
@@ -31,7 +32,6 @@ public class spaceMatter : MonoBehaviour
 
 		//this.GetComponent<Rigidbody>().MovePosition(transform.forward * moveSpeed * Time.deltaTime);
 		//transform.Translate((transform.forward * moveSpeed  * Time.deltaTime));
-		this.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed * Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision collision)
