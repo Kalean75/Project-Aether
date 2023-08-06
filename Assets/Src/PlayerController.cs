@@ -17,7 +17,7 @@ namespace Src
 		GameObject _collidedObject;
 		//Flags
 		bool _currentCollision;
-		bool _paused = false;
+		bool _paused = true;
 
 		// Start is called before the first frame update
 		void Start()
@@ -41,7 +41,7 @@ namespace Src
 				}
 			}
 			//Refactor into imput check function
-			if (Input.GetKeyDown(KeyCode.Escape))
+			if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1.0f)
 			{
 				Pause();
 			}
@@ -52,10 +52,6 @@ namespace Src
 			else
 			{
 				MovePlayer(movementSpeed);
-			}
-			if(this == null)
-			{
-				Pause();
 			}
 		}
 
