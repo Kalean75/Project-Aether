@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 76889726}
   m_Layer: 0
   m_Name: Background (1)
-  m_TagString: Untagged
+  m_TagString: BackGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2665,6 +2665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackHole_PS
       objectReference: {fileID: 0}
+    - target: {fileID: 3534709228367714429, guid: b26612d00b360a649ac95f8746db6d5a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3787922268817682068, guid: b26612d00b360a649ac95f8746db6d5a, type: 3}
       propertyPath: m_Depth
       value: 1
@@ -3042,10 +3046,10 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 100223733}
   - {fileID: 76889729}
-  - {fileID: 2087917698}
   - {fileID: 6507727700279680038}
   - {fileID: 660604875278693585}
   - {fileID: 382743284}
   - {fileID: 1490540829}
   - {fileID: 1426731275}
   - {fileID: 1713905131}
+  - {fileID: 2087917698}
