@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class BgController : MonoBehaviour
 {
-    Vector3 originalScale;
-	float originalPos;
 	// Start is called before the first frame update
 	void Start()
     {
-		transform.position = transform.parent.position + transform.localPosition;
+		this.transform.position = new Vector3(this.transform.position.x,-480.0f,this.transform.position.z);
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-		//transform.position = transform.parent.position + transform.localPosition;
-		transform.localScale = originalScale;
-		transform.localPosition = new Vector3(transform.position.x,transform.position.y, originalPos);
+	private void Update()
+	{
+		this.transform.position = new Vector3(this.transform.position.x, -480.0f, this.transform.position.z);
+		this.gameObject.transform.localScale = GameObject.FindGameObjectWithTag("Player").transform.localScale;
 	}
 }

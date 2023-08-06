@@ -101,4 +101,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6daa329f04e54210962c55777a535fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedLimit: 100
   initialVelocity: {x: 0, y: 0, z: 1}
