@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 8717002649213717473}
   - component: {fileID: 4441377785833226758}
   - component: {fileID: 2716444393250398812}
+  - component: {fileID: 471323932719847825}
   m_Layer: 0
   m_Name: BlackHole_PS
   m_TagString: Untagged
@@ -5069,7 +5070,7 @@ MonoBehaviour:
   movementSpeed: 2
   growthRate: 0
   playerSprites: 
-  canvas: {fileID: 0}
+  pauseMenu: {fileID: 7527602311626052988}
 --- !u!114 &8717002649213717473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5132,6 +5133,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.4
   m_Center: {x: 0, y: 0, z: -0}
+--- !u!114 &471323932719847825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534709228367714429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54101326d824353b8538ebd14ef37d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growthRate: 0.3
 --- !u!1 &3880010416861912381
 GameObject:
   m_ObjectHideFlags: 0
@@ -15140,7 +15154,7 @@ GameObject:
   - component: {fileID: 5427091652199722050}
   - component: {fileID: 6894214436409561020}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
