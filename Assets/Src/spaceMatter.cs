@@ -30,7 +30,7 @@ public class spaceMatter : MonoBehaviour
 
 	private void moveMatter()
 	{
-		transform.Translate(transform.forward * Time.deltaTime);
+		transform.Translate((transform.forward * Time.deltaTime) * 20);
 	}
 
 	//increase size when eating smaller object
