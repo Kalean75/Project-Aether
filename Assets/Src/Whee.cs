@@ -17,23 +17,11 @@ public class Whee : MonoBehaviour
     void Update()
     {
         Vector2 offset = _material.mainTextureOffset;
-        int num = Random.Range(-2, 2);
-        if(num == 1)
-        {
-			offset.y += Time.deltaTime / _offsetCooldown;
-		}
-		if (num == -1)
-		{
-			offset.y -= Time.deltaTime / _offsetCooldown;
-		}
-		if (num == 2)
-        {
-			offset.x += Time.deltaTime / _offsetCooldown;
-		}
-		if (num == -2)
-		{
-			offset.x -= Time.deltaTime / _offsetCooldown;
-		}
+        GameObject player = GameObject.FindWithTag("Player");
+
+			offset.y += (-player.transform.position.z*Time.deltaTime) / _offsetCooldown;
+			offset.x += (-player.transform.position.x * Time.deltaTime) / _offsetCooldown;
+		
 		_material.mainTextureOffset = offset;
     }
 }
