@@ -10,7 +10,7 @@ namespace Src
 		[SerializeField] float movementSpeed = 2.0f;
 		[SerializeField][Range(0.1f,1.0f)] float growthRate;
 		[SerializeField] List<int> playerSprites = new List<int>();
-		[SerializeField] Canvas canvas;
+		[SerializeField] Canvas pauseMenu;
 		
 		//GameObjects
 		GameObject _collidedObject;
@@ -88,13 +88,13 @@ namespace Src
 			if(!_paused)
 			{
 				_paused= true;
-				canvas.gameObject.SetActive(true);
+				pauseMenu.gameObject.SetActive(true);
 				Time.timeScale = 0;
 			}
 			else
 			{
 				_paused = false;
-				canvas.gameObject.SetActive(false);
+				pauseMenu.gameObject.SetActive(false);
 				Time.timeScale = 1;
 			}
 		}
