@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Whee : MonoBehaviour
 {
-    [SerializeField] float _offsetCooldown = 30f;
+    [SerializeField][Range(300,500)]float _offsetCooldown = 300f;
     private Material _material;
 
     // Start is called before the first frame update
@@ -17,8 +17,23 @@ public class Whee : MonoBehaviour
     void Update()
     {
         Vector2 offset = _material.mainTextureOffset;
-
-        offset.x += Time.deltaTime / _offsetCooldown;
-        _material.mainTextureOffset = offset;
+        int num = Random.Range(-2, 2);
+        if(num == 1)
+        {
+			offset.y += Time.deltaTime / _offsetCooldown;
+		}
+		if (num == -1)
+		{
+			offset.y -= Time.deltaTime / _offsetCooldown;
+		}
+		if (num == 2)
+        {
+			offset.x += Time.deltaTime / _offsetCooldown;
+		}
+		if (num == -2)
+		{
+			offset.x -= Time.deltaTime / _offsetCooldown;
+		}
+		_material.mainTextureOffset = offset;
     }
 }
