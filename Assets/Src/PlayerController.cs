@@ -44,7 +44,7 @@ namespace Src
 			{
 				Pause();
 			}
-			if(Input.GetKeyDown(KeyCode.LeftShift)) 
+			if(Input.GetKey(KeyCode.LeftShift)) 
 			{
 				MovePlayer(movementSpeed * 10);
 			}
