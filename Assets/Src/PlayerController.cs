@@ -21,7 +21,7 @@ namespace Src
 		// Start is called before the first frame update
 		void Start()
 		{
-			this.GetComponent<Rigidbody>().freezeRotation= true;
+			this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
 		}
 
 		// Update is called once per frame
@@ -33,7 +33,10 @@ namespace Src
 			}
 			if(_currentCollision)
 			{
-				IncreaseSize(_collidedObject);
+				if(_collidedObject != null)
+				{
+					IncreaseSize(_collidedObject);
+				}
 			}
 			//Refactor into imput check function
 			if (Input.GetKeyDown(KeyCode.Escape))
@@ -42,7 +45,7 @@ namespace Src
 			}
 			if(Input.GetKeyDown(KeyCode.LeftShift)) 
 			{
-				MovePlayer(movementSpeed * 2);
+				MovePlayer(movementSpeed * 10);
 			}
 			else
 			{

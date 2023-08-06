@@ -100,7 +100,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -122,3 +122,5 @@ MonoBehaviour:
   maxSpawnTime: 20
   spawnedObjects:
   - {fileID: 1012362777221783128, guid: 128acba7ea40cfb4f9280bf28d479d44, type: 3}
+  - {fileID: 8960874908569030953, guid: 76e7bd100d7381f439c50c319b8a3dff, type: 3}
+  - {fileID: 2669705401487584618, guid: 6e40edc178469a042b9c639b39812cad, type: 3}

@@ -16,6 +16,7 @@ public class spaceMatter : MonoBehaviour
         float scale = UnityEngine.Random.Range(maximumScale, minimumScale);
 		this.transform.localScale = new Vector3(scale, scale, scale);
 		this.GetComponent<Rigidbody>().mass = this.transform.localScale.x * 5;
+		this.GetComponent<Rigidbody>().freezeRotation = true;
 	}
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class spaceMatter : MonoBehaviour
 
 	private void moveMatter()
 	{
-		transform.Translate((transform.forward * Time.deltaTime) * 20);
+		transform.Translate((transform.forward * 2 * Time.deltaTime));
 	}
 
 	//increase size when eating smaller object
