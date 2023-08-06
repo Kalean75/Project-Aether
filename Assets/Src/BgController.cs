@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BgController : MonoBehaviour
+public class Whee : MonoBehaviour
 {
-	// Start is called before the first frame update
-	void Start()
-    {
-		//this.transform.position = new Vector3(this.transform.position.x,-480.0f,this.transform.position.z);
-	}
+    [SerializeField][Range(300,500)]float _offsetCooldown = 300f;
+    private Material _material;
 
-	private void Update()
-	{
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		//this.transform.position = new Vector3(this.transform.position.x, -480.0f, this.transform.position.z);
-		this.gameObject.transform.position = new Vector3(player.transform.position.x, -480.0f, player.transform.position.z);
-	}
+    // Start is called before the first frame update
+    void Start()
+    {
+        _material = GetComponent<MeshRenderer> ().material;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector2 offset = _material.mainTextureOffset;
+        GameObject player = GameObject.FindWithTag("Player");
+
+			offset.y += (-player.transform.position.z*Time.deltaTime) / _offsetCooldown;
+			offset.x += (-player.transform.position.x * Time.deltaTime) / _offsetCooldown;
+		
+		_material.mainTextureOffset = offset;
+    }
 }
