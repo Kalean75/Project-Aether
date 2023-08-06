@@ -7,7 +7,7 @@ public class spaceMatter : MonoBehaviour
 	[Header("Atrributes of Space debris")]
 	[SerializeField] float minimumScale;
 	[SerializeField] float maximumScale;
-	[SerializeField] float growthRate = 0.3f;
+	[SerializeField] float moveSpeed = 1.0f;
 	GameObject collidedObject;
 	bool currentCollision;
 	// Start is called before the first frame update
@@ -23,35 +23,12 @@ public class spaceMatter : MonoBehaviour
     void Update()
     {
 		moveMatter();
-		if (currentCollision)
-		{
-			IncreaseSize(collidedObject);
-		}
 	}
 
 	private void moveMatter()
 	{
-		transform.Translate((transform.forward * 2 * Time.deltaTime));
-	}
-
-	//increase size when eating smaller object
-	private void IncreaseSize(GameObject collidedObject)
-	{
-		//add to players size
-
-		float x = collidedObject.transform.localScale.x * growthRate;
-		float y = collidedObject.transform.localScale.y * growthRate;
-		float z = collidedObject.transform.localScale.z * growthRate;
-
-		Vector3 collidedTrans = new Vector3(x, y, z);
-		float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
-		if (collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
-		{
-			this.gameObject.transform.localScale += collidedTrans;
-			this.GetComponent<Rigidbody>().mass += collidedMass;
-			currentCollision = false;
-			Destroy(collidedObject);
-		}
+		this.GetComponent<Rigidbody>().MovePosition(transform.forward * moveSpeed * Time.deltaTime);
+		//transform.Translate((transform.forward * moveSpeed  * Time.deltaTime));
 	}
 
 	void OnCollisionEnter(Collision collision)

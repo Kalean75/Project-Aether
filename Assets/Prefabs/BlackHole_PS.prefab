@@ -479,10 +479,10 @@ GameObject:
   - component: {fileID: 4128823796134196406}
   - component: {fileID: 2551873243765212113}
   - component: {fileID: 276972673866850916}
-  - component: {fileID: 8644903422818867242}
-  - component: {fileID: 8717002649213717473}
   - component: {fileID: 4441377785833226758}
   - component: {fileID: 2716444393250398812}
+  - component: {fileID: 8717002649213717473}
+  - component: {fileID: 8644903422818867242}
   - component: {fileID: 471323932719847825}
   m_Layer: 0
   m_Name: BlackHole_PS
@@ -5311,36 +5311,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &8644903422818867242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534709228367714429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e20b249153b65d24bb702a89ee31312a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 2
-  growthRate: 0
-  playerSprites: 
-  pauseMenu: {fileID: 7527602311626052988}
---- !u!114 &8717002649213717473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534709228367714429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6daa329f04e54210962c55777a535fbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedLimit: 100
-  initialVelocity: {x: 0, y: 0, z: 0}
 --- !u!54 &4441377785833226758
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5389,6 +5359,35 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.4
   m_Center: {x: 0, y: 0, z: -0}
+--- !u!114 &8717002649213717473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534709228367714429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6daa329f04e54210962c55777a535fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedLimit: 100
+  initialVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &8644903422818867242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534709228367714429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20b249153b65d24bb702a89ee31312a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 2
+  sprintMovementMultiplier: 10
+  pauseMenu: {fileID: 7527602311626052988}
 --- !u!114 &471323932719847825
 MonoBehaviour:
   m_ObjectHideFlags: 0

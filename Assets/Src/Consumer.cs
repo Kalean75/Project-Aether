@@ -19,26 +19,27 @@ namespace Src
         {
         }
 
-        private void OnCollisionEnter(Collision other)
+        private void OnCollisionEnter(Collision collidedObject)
         {
-           GameObject collidedObject = other.gameObject;
-            var otherScale = other.transform.localScale;
-
-            float x = otherScale.x * growthRate;
-            float y = otherScale.y * growthRate;
-            float z = otherScale.z * growthRate;
-
-            Vector3 collidedTrans = new Vector3(x, y, z);
-
-			float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
-			if (other.transform.localScale.x <= this.transform.localScale.x || collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
+			//add to players size
+            GameObject collidedGO = collidedObject.gameObject;
+            if(collidedGO != null && !collidedGO.CompareTag("Wall"))
             {
-                Debug.Log("Scaling Player");
-                this.transform.localScale += collidedTrans;
-				this.GetComponent<Rigidbody>().mass += collidedMass;
-				Destroy(other.gameObject);
-            }
+				float mass = this.GetComponent<Rigidbody>().mass;
+				float collidedMass = collidedGO.GetComponent<Rigidbody>().mass;
 
-        }
+				float x = collidedObject.transform.localScale.x * growthRate;
+				float y = collidedObject.transform.localScale.y * growthRate;
+				float z = collidedObject.transform.localScale.z * growthRate;
+
+				Vector3 collidedTrans = new Vector3(x, y, z);
+				if (collidedMass <= mass)
+				{
+					this.gameObject.transform.localScale += collidedTrans;
+					this.GetComponent<Rigidbody>().mass += collidedMass;
+					Destroy(collidedObject.gameObject);
+				}
+			}
+		}
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - spaceDebris
   - BackGround
+  - Wall
   layers:
   - Default
   - TransparentFX

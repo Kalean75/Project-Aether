@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AstroidMiniscule Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19a8b730b4be8a34ca38c8a31c773e26, type: 3}
+      propertyPath: m_TagString
+      value: spaceDebris
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -77,6 +81,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 19a8b730b4be8a34ca38c8a31c773e26, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6412121438855643060}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 19a8b730b4be8a34ca38c8a31c773e26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7802911656382002357}
   m_SourcePrefab: {fileID: 100100000, guid: 19a8b730b4be8a34ca38c8a31c773e26, type: 3}
 --- !u!1 &4895328958496779201 stripped
 GameObject:
@@ -128,10 +135,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &-6412121438855643060
 MonoBehaviour:
@@ -147,4 +154,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumScale: 0.1
   maximumScale: 2
+  moveSpeed: 10
+--- !u!114 &7802911656382002357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895328958496779201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54101326d824353b8538ebd14ef37d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   growthRate: 0.3

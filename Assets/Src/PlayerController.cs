@@ -9,8 +9,8 @@ namespace Src
 	{
 		[Header("PlayerAttributes")]
 		[SerializeField] float movementSpeed = 2.0f;
-		[SerializeField][Range(0.1f,1.0f)] float growthRate;
-		[SerializeField] List<int> playerSprites = new List<int>();
+		[SerializeField] float sprintMovementMultiplier = 10.0f;
+		//[SerializeField] List<int> playerSprites = new List<int>();
 		[SerializeField] Canvas pauseMenu;
 		
 		//GameObjects
@@ -29,25 +29,23 @@ namespace Src
 		// Update is called once per frame
 		void Update()
 		{
-			if(this.gameObject == null)
+			if (this.gameObject == null)
 			{
 				Application.Quit();
 			}
-			if(_currentCollision)
-			{
-				if(_collidedObject != null)
-				{
-					IncreaseSize(_collidedObject);
-				}
-			}
+			parseInputs();
+		}
+
+		private void parseInputs()
+		{
 			//Refactor into imput check function
 			if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1.0f)
 			{
 				Pause();
 			}
-			if(Input.GetKey(KeyCode.LeftShift)) 
+			if (Input.GetKey(KeyCode.LeftShift))
 			{
-				MovePlayer(movementSpeed * 10 * (this.transform.localScale.x / 2));
+				MovePlayer(movementSpeed * sprintMovementMultiplier * (this.transform.localScale.x / 2));
 			}
 			else
 			{
@@ -66,28 +64,9 @@ namespace Src
 			var newPosX = position.x + x;
         
 			position = new Vector3(newPosX, 0, newPosz);
-			transform.position = position;
+			//transform.position = position;
+			this.GetComponent<Rigidbody>().MovePosition(position);
 		}
-		//increase size when eating smaller object
-		private void IncreaseSize(GameObject collidedObject)
-		{
-			//add to players size
-
-			float x = collidedObject.transform.localScale.x * growthRate;
-			float y = collidedObject.transform.localScale.y * growthRate;
-			float z = collidedObject.transform.localScale.z * growthRate;
-
-			Vector3 collidedTrans = new Vector3(x, y, z);
-			float collidedMass = collidedObject.GetComponent<Rigidbody>().mass * growthRate;
-			if(collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
-			{
-				this.gameObject.transform.localScale += collidedTrans;
-				this.GetComponent<Rigidbody>().mass += collidedMass;
-				_currentCollision = false;
-				Destroy(collidedObject);
-			}
-		}
-
 		private void Pause()
 		{
 			if(!_paused)
