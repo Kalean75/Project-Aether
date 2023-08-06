@@ -7,6 +7,7 @@ namespace Src
 {
     public class Gravity : MonoBehaviour
     {
+        [SerializeField] private float speedLimit = 100f;
         public Vector3 initialVelocity = new Vector3(0, 0, 0);
         public const float G = 1;
         public Rigidbody Rigidbody => GetComponent<Rigidbody>();
@@ -48,10 +49,10 @@ namespace Src
 
             var direction = (other.position - Rigidbody.position);
             var x = direction.x != 0 ? direction.x / Math.Abs(direction.x) : 0;
-            // var y = direction.y != 0 ? direction.y / Math.Abs(direction.y) : 0;
+            var y = direction.y != 0 ? direction.y / Math.Abs(direction.y) : 0;
             var z = direction.z != 0 ? direction.z / Math.Abs(direction.z) : 0;
 
-            direction = new Vector3(x,0,z);
+            direction = new Vector3(x,y,z);
 
             var result = new Vector3(
                 direction.x * force,

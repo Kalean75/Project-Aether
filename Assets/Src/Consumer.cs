@@ -31,9 +31,10 @@ namespace Src
             Vector3 collidedTrans = new Vector3(x, y, z);
 
 			float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
-			if (other.transform.localScale.x <= this.transform.localScale.x|| collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
+			if (other.transform.localScale.x <= this.transform.localScale.x || collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
             {
-                this.gameObject.transform.localScale += collidedTrans;
+                Debug.Log("Scaling Player");
+                this.transform.localScale += collidedTrans;
 				this.GetComponent<Rigidbody>().mass += collidedMass;
 				Destroy(other.gameObject);
             }
