@@ -22,7 +22,7 @@ namespace Src
 		// Start is called before the first frame update
 		void Start()
 		{
-			this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
+			this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 		}
 
 		// Update is called once per frame
@@ -46,7 +46,7 @@ namespace Src
 			}
 			if(Input.GetKey(KeyCode.LeftShift)) 
 			{
-				MovePlayer(movementSpeed * 10);
+				MovePlayer(movementSpeed * 10 * (this.transform.localScale.x / 2));
 			}
 			else
 			{
@@ -77,7 +77,7 @@ namespace Src
 			float z = collidedObject.transform.localScale.z * growthRate;
 
 			Vector3 collidedTrans = new Vector3(x, y, z);
-			float collidedMass = collidedObject.GetComponent<Rigidbody>().mass;
+			float collidedMass = collidedObject.GetComponent<Rigidbody>().mass * growthRate;
 			if(collidedObject.GetComponent<Rigidbody>().mass <= this.GetComponent<Rigidbody>().mass)
 			{
 				this.gameObject.transform.localScale += collidedTrans;
