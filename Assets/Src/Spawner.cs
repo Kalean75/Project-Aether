@@ -18,11 +18,11 @@ public class Spawner : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-		SpawnObject();
+    {  int index = UnityEngine.Random.Range(0,spawnedObjects.Count);
+		SpawnObject(index);
     }
 
-    private void SpawnObject()
+    private void SpawnObject(int index)
     {
         spawnTime -= Time.deltaTime;
         int offsetx = UnityEngine.Random.Range(1, 5);
@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
         if(spawnTime <= 0.0f)
         {
 			spawnTime = UnityEngine.Random.Range(minSpawnTime, maxSpawnTime);
-			Instantiate(spawnedObjects[0], new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - (transform.forward.z+offsetz)), this.transform.rotation);			
+			Instantiate(spawnedObjects[index], new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - (transform.forward.z+offsetz)), this.transform.rotation);			
 		}
     }
 }

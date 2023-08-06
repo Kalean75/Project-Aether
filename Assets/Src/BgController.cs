@@ -19,9 +19,9 @@ public class Whee : MonoBehaviour
         Vector2 offset = _material.mainTextureOffset;
         GameObject player = GameObject.FindWithTag("Player");
 
-			offset.y += (-player.transform.position.z*0.001f) / _offsetCooldown;
-			offset.x += (-player.transform.position.x * 0.001f) / _offsetCooldown;
-		
+		//offset.y += (-player.transform.position.z*0.001f) / _offsetCooldown;
+		offset.x += (-player.transform.position.x * 0.001f) / _offsetCooldown;
+		//offset.x += Time.deltaTime / _offsetCooldown;
 		_material.mainTextureOffset = offset;
     }
 }

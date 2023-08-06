@@ -143,6 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d86945f22548b74ea9e62febcdc33fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumScale: 0
-  maximumScale: 0
+  minimumScale: 0.1
+  maximumScale: 2
   growthRate: 0.3

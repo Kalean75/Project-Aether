@@ -23,6 +23,7 @@ namespace Src
 		void Start()
 		{
 			this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+			Time.timeScale = 0.0f;
 		}
 
 		// Update is called once per frame
@@ -51,6 +52,10 @@ namespace Src
 			else
 			{
 				MovePlayer(movementSpeed);
+			}
+			if(this == null)
+			{
+				Pause();
 			}
 		}
 
