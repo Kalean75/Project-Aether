@@ -22,6 +22,6 @@ public class Whee : MonoBehaviour
 		offset.y += (-player.transform.position.z*0.001f) / _offsetCooldown;
 		offset.x += (-player.transform.position.x * 0.001f) / _offsetCooldown;
 		//offset.x += Time.deltaTime / _offsetCooldown;
-		//_material.mainTextureOffset = offset;
+		_material.mainTextureOffset = offset;
     }
 }
