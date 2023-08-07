@@ -5,6 +5,7 @@ using UnityEngine;
 public class Whee : MonoBehaviour
 {
     [SerializeField][Range(300,500)]float _offsetCooldown = 300f;
+    [SerializeField][Range(0.001f, 0.010f)] float moveDampener = 0.001f;
     private Material _material;
 
     // Start is called before the first frame update
@@ -19,8 +20,8 @@ public class Whee : MonoBehaviour
         Vector2 offset = _material.mainTextureOffset;
         GameObject player = GameObject.FindWithTag("Player");
 
-		offset.y += (-player.transform.position.z*0.001f) / _offsetCooldown;
-		offset.x += (-player.transform.position.x * 0.001f) / _offsetCooldown;
+		offset.y += (-player.GetComponent<Rigidbody>().velocity.z*moveDampener) / _offsetCooldown;
+		offset.x += (-player.GetComponent<Rigidbody>().velocity.x * moveDampener) / _offsetCooldown;
 		//offset.x += Time.deltaTime / _offsetCooldown;
 		_material.mainTextureOffset = offset;
     }

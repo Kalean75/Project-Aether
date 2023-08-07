@@ -7,7 +7,7 @@ namespace Src
 {
     public class Gravity : MonoBehaviour
     {
-        [SerializeField] private float speedLimit = 100f;
+        //[SerializeField] private float speedLimit = 100f;
         public Vector3 initialVelocity = new Vector3(0, 0, 0);
         public const float G = 1;
         public Rigidbody Rigidbody => GetComponent<Rigidbody>();

@@ -118,20 +118,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de357e16840f1524f9c637d630f79089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 1
-  maxSpawnTime: 20
+  minSpawnTime: 0.1
+  maxSpawnTime: 10
   spawnedObjects:
-  - {fileID: 4349643947258361815, guid: 1ede20f246f51484893cf684098d9111, type: 3}
+  - {fileID: 390510981876952538, guid: dfb44b066fa6f1d4eb2e826faae5f08c, type: 3}
   - {fileID: 4316080695109681844, guid: f0bcebcbdd6bffa48921b125037ebc77, type: 3}
   - {fileID: 7818205796305897105, guid: f6d590deae0ec3f44839787675ff023b, type: 3}
   - {fileID: 1498628361888738274, guid: 7a13ed2db8b85a14daebfd7c1424a305, type: 3}
-  - {fileID: 5238816258865202194, guid: a8870165a720e024f8b34d148cded16a, type: 3}
-  - {fileID: 3758442310144987473, guid: e009daa89ac822148807e51ae1ffbad0, type: 3}
-  - {fileID: 2646101794482286705, guid: 46b99d2ac53a94347ac6522754a79f93, type: 3}
+  - {fileID: 1333893552002805186, guid: 926031fb699813e4e825c68bc96c99a0, type: 3}
+  - {fileID: 4566133754355357267, guid: 06ea38639cdc4e64ea999415782e03dc, type: 3}
+  - {fileID: 4247088491185258619, guid: 171bd124ee255fe4dbfdbc51861d57b5, type: 3}
   - {fileID: 2598572006515972624, guid: 291e604898b48f441a081413a8d4dda5, type: 3}
   - {fileID: 4895328958496779201, guid: 12ca13fe16f2b4a48aecd95980e7be17, type: 3}
   - {fileID: 8234266682564441860, guid: 4e39bab385cff7a47952750eca2b5601, type: 3}
   - {fileID: 120554512149397366, guid: 1b692de19659aed4798a2155908f0daa, type: 3}
   - {fileID: 3194579927499756227, guid: b8a1d810000337d4b9515588e8621830, type: 3}
   - {fileID: 1289015002579294375, guid: 435f5be61388adc46bc812091a6b5390, type: 3}
-  - {fileID: 8704702463944580549, guid: c89c22c20c63949479832d8c2f8c8c7a, type: 3}
+  - {fileID: 7509125351487368686, guid: 7f051ceea5beee949a9f22a49adaf2e4, type: 3}

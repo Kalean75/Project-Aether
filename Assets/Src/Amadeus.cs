@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Amadeus : MonoBehaviour
 {
-    [SerializeField] float _crossfadeTime = 1f;
+    //[SerializeField] float _crossfadeTime = 1f;
     [SerializeField] Transform _observerTarget;
     [SerializeField] float _observed;
     [SerializeField][Range(1f, 20f)] float _transitionPoint1 = 5f;

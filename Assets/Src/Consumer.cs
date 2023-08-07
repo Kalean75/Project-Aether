@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 namespace Src
@@ -32,18 +33,27 @@ namespace Src
 				float y = collidedObject.transform.localScale.y * growthRate;
 				float z = collidedObject.transform.localScale.z * growthRate;
                 Vector3 collidedTrans = new Vector3(x, y, z);
-                if(collidedMass < mass/2)
-                {
-					collidedTrans = new Vector3(0.0f, 0.0f, 0.0f);
-                    collidedMass = 0.0f;
-				}
+                //if(collidedMass < mass/2)
+                //{
+				//	collidedTrans = new Vector3(0.0f, 0.0f, 0.0f);
+                //    collidedMass = 0.0f;
+				//}
 				if (collidedMass <= mass)
 				{
 					this.gameObject.transform.localScale += collidedTrans;
 					this.GetComponent<Rigidbody>().mass += collidedMass;
                     if(collidedGO.tag == "Player")
                     {
-                        collidedGO.GetComponent<PlayerController>().gameOver();
+                        //if scale big enough restart
+                        if(this.transform.localScale.x > 50)
+                        {
+							Scene scene = SceneManager.GetActiveScene();
+							SceneManager.LoadScene(scene.name);
+						}
+                        else
+                        {
+							collidedGO.GetComponent<PlayerController>().gameOver();
+						}
                     }
                     else
                     {
