@@ -1961,6 +1961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundVariation2
       objectReference: {fileID: 0}
+    - target: {fileID: 2759490099964772640, guid: 154a23799c795cd44b6bbb9cee1d4676, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4493269272845518884, guid: 154a23799c795cd44b6bbb9cee1d4676, type: 3}
       propertyPath: m_LocalScale.x
       value: 99.34173
@@ -65881,6 +65885,10 @@ PrefabInstance:
     - target: {fileID: 2759490099964772640, guid: 154a23799c795cd44b6bbb9cee1d4676, type: 3}
       propertyPath: m_Name
       value: BackgroundVariation3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759490099964772640, guid: 154a23799c795cd44b6bbb9cee1d4676, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4493269272845518884, guid: 154a23799c795cd44b6bbb9cee1d4676, type: 3}
       propertyPath: m_LocalScale.x
