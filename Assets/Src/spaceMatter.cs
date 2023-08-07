@@ -8,7 +8,7 @@ public class spaceMatter : MonoBehaviour
 	[Header("Atrributes of Space debris")]
 	[SerializeField] float minimumScale;
 	[SerializeField] float maximumScale;
-	[SerializeField] float moveSpeed = 1.0f;
+	[SerializeField] float moveSpeed = 100.0f;
 	GameObject collidedObject;
 	//bool currentCollision;
 	// Start is called before the first frame update
@@ -32,6 +32,7 @@ public class spaceMatter : MonoBehaviour
 
 		//this.GetComponent<Rigidbody>().MovePosition(transform.forward * moveSpeed * Time.deltaTime);
 		//transform.Translate((transform.forward * moveSpeed  * Time.deltaTime));
+		this.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed * Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision collision)

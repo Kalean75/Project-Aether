@@ -67,6 +67,10 @@ namespace Src
 			//position = new Vector3(newPosX, 0, newPosz);
 			//transform.position = position;
 			this.GetComponent<Rigidbody>().velocity = acceleration;
+			if(this.transform.position.y > 0)
+			{
+				this.transform.position = new Vector3(this.transform.position.x, 0, this.transform.position.z);
+			}
 		}
 		private void Pause()
 		{
