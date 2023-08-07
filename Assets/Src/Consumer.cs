@@ -31,8 +31,12 @@ namespace Src
 				float x = collidedObject.transform.localScale.x * growthRate;
 				float y = collidedObject.transform.localScale.y * growthRate;
 				float z = collidedObject.transform.localScale.z * growthRate;
-
-				Vector3 collidedTrans = new Vector3(x, y, z);
+                Vector3 collidedTrans = new Vector3(x, y, z);
+                if(collidedMass < mass/2)
+                {
+					collidedTrans = new Vector3(0.0f, 0.0f, 0.0f);
+                    collidedMass = 0.0f;
+				}
 				if (collidedMass <= mass)
 				{
 					this.gameObject.transform.localScale += collidedTrans;
