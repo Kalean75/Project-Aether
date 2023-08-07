@@ -19,6 +19,10 @@ public class Borders : MonoBehaviour
 	{
         if(collision.gameObject.CompareTag("Player"))
         {
+			//top: 963 z
+			//bottom - 953 z
+			//left 745 x
+			//right - 293 x
 			switch (this.tag)
 			{
 				case "RightWall":

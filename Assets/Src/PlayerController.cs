@@ -12,7 +12,8 @@ namespace Src
 		[SerializeField] float sprintMovementMultiplier = 10.0f;
 		//[SerializeField] List<int> playerSprites = new List<int>();
 		[SerializeField] Canvas pauseMenu;
-		
+		[SerializeField] Canvas deathMenu;
+
 		//GameObjects
 		GameObject _collidedObject;
 		//Flags
@@ -86,6 +87,12 @@ namespace Src
 				pauseMenu.gameObject.SetActive(false);
 				Time.timeScale = 1;
 			}
+		}
+
+		public void gameOver()
+		{
+			deathMenu.gameObject.SetActive(true);
+			Time.timeScale = 0;
 		}
 
 		void OnCollisionEnter(Collision collision)

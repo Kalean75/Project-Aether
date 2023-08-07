@@ -17405,6 +17405,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8644903422818867242, guid: b26612d00b360a649ac95f8746db6d5a, type: 3}
+      propertyPath: deathMenu
+      value: 
+      objectReference: {fileID: 5502306889307659945}
+    - target: {fileID: 8644903422818867242, guid: b26612d00b360a649ac95f8746db6d5a, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1118203481}
@@ -18100,6 +18104,11 @@ MonoBehaviour:
 --- !u!1 &5502306889307659941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5502306890445293095, guid: b26612d00b360a649ac95f8746db6d5a, type: 3}
+  m_PrefabInstance: {fileID: 2087917698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &5502306889307659945 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7527602311626052988, guid: b26612d00b360a649ac95f8746db6d5a, type: 3}
   m_PrefabInstance: {fileID: 2087917698}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8398714761789151880 stripped

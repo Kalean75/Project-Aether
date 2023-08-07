@@ -37,7 +37,14 @@ namespace Src
 				{
 					this.gameObject.transform.localScale += collidedTrans;
 					this.GetComponent<Rigidbody>().mass += collidedMass;
-					Destroy(collidedObject.gameObject);
+                    if(collidedGO.tag == "Player")
+                    {
+                        collidedGO.GetComponent<PlayerController>().gameOver();
+                    }
+                    else
+                    {
+						Destroy(collidedGO);
+					}
 				}
 			}
 		}
