@@ -53,7 +53,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -118,20 +118,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de357e16840f1524f9c637d630f79089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 10
-  maxSpawnTime: 100
+  minSpawnTime: 1
+  maxSpawnTime: 50
   spawnedObjects:
-  - {fileID: 390510981876952538, guid: dfb44b066fa6f1d4eb2e826faae5f08c, type: 3}
-  - {fileID: 4316080695109681844, guid: f0bcebcbdd6bffa48921b125037ebc77, type: 3}
-  - {fileID: 7818205796305897105, guid: f6d590deae0ec3f44839787675ff023b, type: 3}
-  - {fileID: 1498628361888738274, guid: 7a13ed2db8b85a14daebfd7c1424a305, type: 3}
-  - {fileID: 1333893552002805186, guid: 926031fb699813e4e825c68bc96c99a0, type: 3}
-  - {fileID: 4566133754355357267, guid: 06ea38639cdc4e64ea999415782e03dc, type: 3}
-  - {fileID: 4247088491185258619, guid: 171bd124ee255fe4dbfdbc51861d57b5, type: 3}
-  - {fileID: 2598572006515972624, guid: 291e604898b48f441a081413a8d4dda5, type: 3}
-  - {fileID: 4895328958496779201, guid: 12ca13fe16f2b4a48aecd95980e7be17, type: 3}
-  - {fileID: 8234266682564441860, guid: 4e39bab385cff7a47952750eca2b5601, type: 3}
-  - {fileID: 120554512149397366, guid: 1b692de19659aed4798a2155908f0daa, type: 3}
-  - {fileID: 3194579927499756227, guid: b8a1d810000337d4b9515588e8621830, type: 3}
-  - {fileID: 1289015002579294375, guid: 435f5be61388adc46bc812091a6b5390, type: 3}
-  - {fileID: 7509125351487368686, guid: 7f051ceea5beee949a9f22a49adaf2e4, type: 3}
+  - {fileID: 785931939511696714, guid: 8d2313e0a495a494b8f9157b53d52d47, type: 3}
+  - {fileID: 1522408158081917141, guid: ae39b122598be10439428e58a1983d07, type: 3}
+  - {fileID: 759474096737753110, guid: 205853a32ef87e844aa31becf90e92fd, type: 3}
+  - {fileID: 5688234817969403047, guid: 14dd5e64d35ebc144ac546970fa7fab6, type: 3}
+  - {fileID: 5267221478716767481, guid: 86e05ae5bb92a0745940a069666937e7, type: 3}
+  - {fileID: 8520927121143488154, guid: 632beaeb395b5544baa1befa02466911, type: 3}
+  - {fileID: 619841972114676881, guid: 9914f00bc208c404799b3e66c899bf57, type: 3}
+  - {fileID: 5974789465371539002, guid: f797e28a291245d42997f50f17ec7703, type: 3}
+  - {fileID: 2312999398992698427, guid: c9cb138b6e966ee46adbc66f7ae32821, type: 3}
+  - {fileID: 4564455218865807895, guid: 58d34a40dfb22c449ba443802a24b6fa, type: 3}
+  - {fileID: 1713574426011773778, guid: 5a04d58840f94e24e80465b76d5e6ad7, type: 3}
+  - {fileID: 4813173640411529070, guid: 8e7a11d41d8e7f54a9f6f532ab4f6a82, type: 3}
+  - {fileID: 777272300808156247, guid: f2f50426b2d3bde48a5a311ac30bd964, type: 3}
+  - {fileID: 3082275077814884614, guid: fb4307d0028a92943b8a36e29a422115, type: 3}
+  - {fileID: 7940421808818522042, guid: f893d7dbf45d9f048acedd0cc7ab6d51, type: 3}
+  - {fileID: 8783182807973394985, guid: bb6c76503fc88d74eb0fc1f6abd02b68, type: 3}
