@@ -20,7 +20,7 @@ public class Whee : MonoBehaviour
         Vector2 offset = _material.mainTextureOffset;
         GameObject player = GameObject.FindWithTag("Player");
 
-		offset.y += (-player.GetComponent<Rigidbody>().velocity.z*moveDampener) / _offsetCooldown;
+		offset.y += (-player.GetComponent<Rigidbody>().velocity.z * moveDampener) / _offsetCooldown;
 		offset.x += (-player.GetComponent<Rigidbody>().velocity.x * moveDampener) / _offsetCooldown;
 		//offset.x += Time.deltaTime / _offsetCooldown;
 		_material.mainTextureOffset = offset;

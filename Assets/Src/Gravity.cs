@@ -27,21 +27,21 @@ namespace Src
 
         public void ApplyForces()
         {
-            var gravityObjects = new List<Gravity>(GameObject.FindObjectsByType<Gravity>(FindObjectsSortMode.None));
+            var gravityObjects = new List<spaceMatter>(GameObject.FindObjectsByType<spaceMatter>(FindObjectsSortMode.None));
             foreach(var x in gravityObjects)
             {
                 if(x == this)
                 {
                     continue;
                 }
-                Rigidbody.AddForce(CalculateForce(x.Rigidbody));
+                Rigidbody.AddForce(CalculateForce(x.GetComponent<Rigidbody>()));
             }
 
         
         }
 
         public Vector3 CalculateForce(Rigidbody other) {
-            float m1 = Rigidbody.mass;
+            float m1 = this.GetComponent<Rigidbody>().mass;
             float m2 = other.mass;
             float dist = Vector3.Distance(Rigidbody.position, other.position);
 
@@ -56,7 +56,7 @@ namespace Src
 
             var result = new Vector3(
                 direction.x * force,
-                direction.y * force,
+               0, //direction.y * force,
                 direction.z * force
             );
 

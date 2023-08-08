@@ -57,7 +57,7 @@ public class Amadeus : MonoBehaviour
     }
     IEnumerator FadeIn(AudioSource clip)
     {
-        Debug.Log("Fadein Corroutine started");
+        //Debug.Log("Fadein Corroutine started");
         clip.volume = Mathf.Lerp(0,50,100);
         yield return null;
     }

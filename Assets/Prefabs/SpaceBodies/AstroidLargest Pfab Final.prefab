@@ -120,7 +120,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 4
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d86945f22548b74ea9e62febcdc33fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumScale: 0
-  maximumScale: 0
-  moveSpeed: 1000
+  minimumScale: 1
+  maximumScale: 10
+  moveSpeed: 10

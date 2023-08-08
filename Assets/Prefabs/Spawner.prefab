@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de357e16840f1524f9c637d630f79089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 0.1
-  maxSpawnTime: 10
+  minSpawnTime: 10
+  maxSpawnTime: 100
   spawnedObjects:
   - {fileID: 390510981876952538, guid: dfb44b066fa6f1d4eb2e826faae5f08c, type: 3}
   - {fileID: 4316080695109681844, guid: f0bcebcbdd6bffa48921b125037ebc77, type: 3}

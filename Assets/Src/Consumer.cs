@@ -8,7 +8,7 @@ namespace Src
 {
     public class Consumer : MonoBehaviour
     {
-        [SerializeField] float growthRate = 0.3f;
+        [SerializeField] float growthRate = 0.1f;
 
         // Start is called before the first frame update
         void Start()
@@ -24,7 +24,7 @@ namespace Src
         {
 			//add to players size
             GameObject collidedGO = collidedObject.gameObject;
-            if(collidedGO != null && !collidedGO.CompareTag("Wall") && collidedObject.gameObject!= this.gameObject)
+            if(collidedGO != null && !collidedGO.CompareTag("RightWall") && !collidedGO.CompareTag("BottomWall") && !collidedGO.CompareTag("LeftWall") && !collidedGO.CompareTag("TopWall") && collidedObject.gameObject!= this.gameObject)
             {
 				float mass = this.GetComponent<Rigidbody>().mass;
 				float collidedMass = collidedGO.GetComponent<Rigidbody>().mass;
@@ -33,11 +33,11 @@ namespace Src
 				float y = collidedObject.transform.localScale.y * growthRate;
 				float z = collidedObject.transform.localScale.z * growthRate;
                 Vector3 collidedTrans = new Vector3(x, y, z);
-                //if(collidedMass < mass/2)
-                //{
-				//	collidedTrans = new Vector3(0.0f, 0.0f, 0.0f);
-                //    collidedMass = 0.0f;
-				//}
+                if(this.transform.localScale.x >= 50.0f)
+                {
+				    collidedTrans = new Vector3(0.0f, 0.0f, 0.0f);
+                    collidedMass = 0.0f;
+				}
 				if (collidedMass <= mass)
 				{
 					this.gameObject.transform.localScale += collidedTrans;
