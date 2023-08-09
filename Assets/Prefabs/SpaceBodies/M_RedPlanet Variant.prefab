@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6261330785279446175}
   - component: {fileID: -197068562196406647}
   - component: {fileID: 8101571588393703910}
+  - component: {fileID: 301709499860811756}
   m_Layer: 0
   m_Name: M_RedPlanet Variant
   m_TagString: Untagged
@@ -72,7 +73,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3082275077814884614}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 40
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -112,6 +113,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4.55
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &301709499860811756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082275077814884614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6daa329f04e54210962c55777a535fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &5682408129275658083
 PrefabInstance:
   m_ObjectHideFlags: 0

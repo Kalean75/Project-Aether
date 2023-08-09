@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4938507488092339520}
   - component: {fileID: 3493353244722421149}
   - component: {fileID: 1067308482500239298}
+  - component: {fileID: 1205356683448572244}
   m_Layer: 0
   m_Name: ugeCrater Pfab Finalter Pfab Final
   m_TagString: Untagged
@@ -72,7 +73,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8783182807973394985}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -114,6 +115,19 @@ CapsuleCollider:
   m_Height: 3.8749633
   m_Direction: 1
   m_Center: {x: 0, y: -0.06251836, z: 0}
+--- !u!114 &1205356683448572244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783182807973394985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6daa329f04e54210962c55777a535fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &1969545537612855540
 PrefabInstance:
   m_ObjectHideFlags: 0

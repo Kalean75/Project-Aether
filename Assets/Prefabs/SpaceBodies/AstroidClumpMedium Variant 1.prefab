@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5902017633692342990}
   - component: {fileID: 3608206863904241223}
   - component: {fileID: 1911652123786876993}
+  - component: {fileID: -1426830673385490395}
   m_Layer: 0
   m_Name: AstroidClumpMedium Variant 1
   m_TagString: Untagged
@@ -72,7 +73,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785931939511696714}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 15
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -114,6 +115,19 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1426830673385490395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785931939511696714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6daa329f04e54210962c55777a535fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &955313832604683856
 PrefabInstance:
   m_ObjectHideFlags: 0

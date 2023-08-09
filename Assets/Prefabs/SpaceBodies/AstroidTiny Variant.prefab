@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6780792337307219914}
   - component: {fileID: -4417046827537015371}
   - component: {fileID: 7830532314409883180}
+  - component: {fileID: 3965407918254796667}
   m_Layer: 0
   m_Name: AstroidTiny Variant
   m_TagString: Untagged
@@ -72,7 +73,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4813173640411529070}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -114,6 +115,19 @@ CapsuleCollider:
   m_Height: 0.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3965407918254796667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813173640411529070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6daa329f04e54210962c55777a535fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &3316673514642454903
 PrefabInstance:
   m_ObjectHideFlags: 0

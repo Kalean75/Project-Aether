@@ -19,7 +19,7 @@ namespace Src
         }
      
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             ApplyForces();
         }
@@ -27,17 +27,16 @@ namespace Src
 
         public void ApplyForces()
         {
-            var gravityObjects = new List<spaceMatter>(GameObject.FindObjectsByType<spaceMatter>(FindObjectsSortMode.None));
-            foreach(var x in gravityObjects)
-            {
-                if(x == this)
-                {
-                    continue;
-                }
-                Rigidbody.AddForce(CalculateForce(x.GetComponent<Rigidbody>()));
-            }
+                var gravityObjects = new List<spaceMatter>(GameObject.FindObjectsByType<spaceMatter>(FindObjectsSortMode.None));
 
-        
+                foreach (var gravityObject in gravityObjects)
+                {
+                    if (gravityObject == this)
+                    {
+                        continue;
+                    }
+                    Rigidbody.AddForce(CalculateForce(gravityObject.GetComponent<Rigidbody>()));
+                }   
         }
 
         public Vector3 CalculateForce(Rigidbody other) {
