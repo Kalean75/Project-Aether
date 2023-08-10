@@ -27,16 +27,19 @@ namespace Src
 
         public void ApplyForces()
         {
-                var gravityObjects = new List<spaceMatter>(GameObject.FindObjectsByType<spaceMatter>(FindObjectsSortMode.None));
+            if (this.GetComponentInChildren<Renderer>().isVisible)
+            {
+				var gravityObjects = new List<Gravity>(GameObject.FindObjectsByType<Gravity>(FindObjectsSortMode.None));
 
-                foreach (var gravityObject in gravityObjects)
-                {
-                    if (gravityObject == this)
-                    {
-                        continue;
-                    }
-                    Rigidbody.AddForce(CalculateForce(gravityObject.GetComponent<Rigidbody>()));
-                }   
+				foreach (var gravityObject in gravityObjects)
+				{
+					if (gravityObject == this)
+					{
+						continue;
+					}
+					Rigidbody.AddForce(CalculateForce(gravityObject.GetComponent<Rigidbody>()));
+				}
+			} 
         }
 
         public Vector3 CalculateForce(Rigidbody other) {
