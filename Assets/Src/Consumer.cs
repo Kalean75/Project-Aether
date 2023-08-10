@@ -27,7 +27,7 @@ namespace Src
             if(collidedGO != null && !collidedGO.CompareTag("RightWall") && !collidedGO.CompareTag("BottomWall") && !collidedGO.CompareTag("LeftWall") && !collidedGO.CompareTag("TopWall") && collidedObject.gameObject!= this.gameObject)
             {
 				float mass = this.GetComponent<Rigidbody>().mass;
-				float collidedMass = collidedGO.GetComponent<Rigidbody>().mass * growthRate;
+				float collidedMass = collidedGO.GetComponent<Rigidbody>().mass;
 
 				float x = collidedObject.transform.localScale.x * growthRate;
 				float y = collidedObject.transform.localScale.y * growthRate;
@@ -38,10 +38,10 @@ namespace Src
 				    collidedTrans = new Vector3(0.0f, 0.0f, 0.0f);
                     collidedMass = 0.0f;
 				}
-				if (collidedMass <= mass)
+				if (collidedMass < mass)
 				{
 					this.gameObject.transform.localScale += collidedTrans;
-					this.GetComponent<Rigidbody>().mass += collidedMass;
+					this.GetComponent<Rigidbody>().mass += collidedMass * growthRate;
                     if(collidedGO.tag == "Player")
                     {
                         //if scale big enough restart

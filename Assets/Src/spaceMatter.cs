@@ -39,12 +39,12 @@ public class spaceMatter : MonoBehaviour
 	void OnCollisionEnter(Collision collision)
 	{
 		//currentCollision = true;
-		collidedObject = collision.gameObject;
+		//collidedObject = collision.gameObject;
 	}
 
 	void OnCollisionExit(Collision collision)
 	{
 		//currentCollision = false;
-		collidedObject = collision.gameObject;
+		//collidedObject = collision.gameObject;
 	}
 }
