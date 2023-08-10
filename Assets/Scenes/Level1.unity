@@ -49360,6 +49360,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 471323932719847825, guid: b26612d00b360a649ac95f8746db6d5a, type: 3}
+      propertyPath: growthRate
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 1385568952405660264, guid: b26612d00b360a649ac95f8746db6d5a, type: 3}
       propertyPath: scalingMode
       value: 0

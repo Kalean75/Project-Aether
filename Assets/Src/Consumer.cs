@@ -27,7 +27,7 @@ namespace Src
             if(collidedGO != null && !collidedGO.CompareTag("RightWall") && !collidedGO.CompareTag("BottomWall") && !collidedGO.CompareTag("LeftWall") && !collidedGO.CompareTag("TopWall") && collidedObject.gameObject!= this.gameObject)
             {
 				float mass = this.GetComponent<Rigidbody>().mass;
-				float collidedMass = collidedGO.GetComponent<Rigidbody>().mass;
+				float collidedMass = collidedGO.GetComponent<Rigidbody>().mass * growthRate;
 
 				float x = collidedObject.transform.localScale.x * growthRate;
 				float y = collidedObject.transform.localScale.y * growthRate;
