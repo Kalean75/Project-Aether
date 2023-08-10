@@ -37,12 +37,13 @@ namespace Src
 					{
 						continue;
 					}
-					Rigidbody.AddForce(CalculateForce(gravityObject.GetComponent<Rigidbody>()));
+					Rigidbody.AddForce(CalculateForce(gravityObject.GetComponent<Rigidbody>()),ForceMode.VelocityChange);
 				}
 			} 
         }
 
-        public Vector3 CalculateForce(Rigidbody other) {
+        public Vector3 CalculateForce(Rigidbody other) 
+        {
             float m1 = this.GetComponent<Rigidbody>().mass;
             float m2 = other.mass;
             float dist = Vector3.Distance(Rigidbody.position, other.position);
